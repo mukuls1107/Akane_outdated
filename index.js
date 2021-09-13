@@ -293,7 +293,7 @@ const perms = channel.permissionsFor(message.client.user)
     if(message.channel.type === "dm") return message.author.send("Sorry, I don't respond to DM's. Add me to your server so we can have fun:\nhttps://discord.com/api/oauth2/authorize?client_id=870174977914196058&permissions=137976212560&scope=bot");
     //vote checkr!
     if(message.content === "!ch"){
-      dbl.hasVoted(message.author.id).then(c=>{
+      DBL.hasVoted(message.author.id).then(c=>{
         if(c){
           message.channel.send("Yes, u did that!")
         }else{
