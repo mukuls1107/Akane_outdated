@@ -110,7 +110,7 @@ for (const file of eventFiles) {
 //TopGG Server Counter
 
 
-
+/*
 const Topgg = require("@top-gg/sdk")
 const express = require("express")
 
@@ -126,7 +126,7 @@ app.post("/dblwebhook", webhook.listener(vote => {
 }))
 
 app.listen(3000)
-
+*/
 
  // Your discord.js or eris client (or djs ShardingManager)
  /*  let embed = await new Discord.RichEmbed()
