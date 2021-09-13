@@ -10,8 +10,10 @@ module.exports.run = async (bot, message, args) => {
     let servsize = bot.guilds.size
   let botembed = new Discord.RichEmbed()
   .setTitle("Bot Info")
+  .setThumbnail(`${bicon}`)
   .setDescription(`This bot was created for the DevHub Server of Discord to have fun.`)
-  .setFooter(`Thanks for using our bot.`)
+  .setFooter(`Thanks for using our bot.\nYou can invite it from here!`)
+  .setURL('https://top.gg/bot/870174977914196058')
   .setColor("GREEN")
   .addField(`- Bot creators: \n`, `> DAMOÑ#8497\n> <@587517896133967884>\n\n> @Akshu✨#6552\n> <@585711075413065728>`)
   .addField(`- Bot info: \n`, `> ${bot.user.tag}\n> 870174977914196058`)
@@ -19,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
   .addField(`- Servers: \n`, `🛡 ${servsize}`)
     .addField(`- channels: \n`, `📁 ${chansize}`)
     .addField(`- Users: \n`, `🙆‍♂️ ${usersize}` )
+  
   
   message.channel.send(botembed).then(m => m.delete(300000));
 }
