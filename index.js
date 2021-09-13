@@ -96,7 +96,7 @@ async function load(dir){
 ["actions","collections","fun","image","secret","settings","utility"].forEach(ld => load(ld));
 // Events
 
-  const eventFiles = fs
+ /* const eventFiles = fs
 	.readdirSync('./events')
 	.filter(file => file.endsWith('.js'));
 for (const file of eventFiles) {
@@ -106,7 +106,7 @@ for (const file of eventFiles) {
 	} else {
 		bot.on(event.name, (...args) => event.execute(...args, bot));
 	}
-}
+} */
 //TopGG Server Counter
 
 
