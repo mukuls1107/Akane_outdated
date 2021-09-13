@@ -264,27 +264,7 @@ poster.on('error',(err)=>{
 bot.on("message", async message =>{
     // If bot, ignore
   
-    const channel = message.channel
-const perms = channel.permissionsFor(message.client.user)
-    const prefixMention = new RegExp(`^<@!?${bot.user.id}>( |)$`);
-    if (message.content.match(prefixMention) && perms.has("SEND_MESSAGES")) {
-        const name = message.member.nickname || message.author.username
-        return message.channel.send(
-            new Discord.RichEmbed()
-            .setColor(`#00ffff`)
-            .setImage(bot.avatarURL)
-            .setAuthor(bot.user.username)
-            .setDescription(`
-**Yo! Wassup ${name} I am Akane - A Perfect Discord Bot!**
-• **My prefix for this server is** \`${bot.prefix}\`
-• **Use** \`${bot.prefix}help\` to get help about me.`))}
-/*let permission = channel.permissionsFor(message.bot.author)
-               if(!permission.has("VIEW_CHANNEL")) return message.channel.send(`❌**|** I Don't Have \`VIEW_CHANNEL\` Permission For This Channel!`)
-               if(!permission.has("SEND_MESSAGES")) return message.reply(`I Don't Have \`SEND_MESSAGES\` Permission For This Channel!`)
-               if(!permission.has('MANAGE_CHANNELS')) return message.channel.send(`❌ **|** I Don't Have \`'MANAGE_CHANNELS'\` Permission For This Channel!`)
-               if(!permission.has("EMBED_LINKS")) return message.reply(`❌ **|** I Don't Have \`EMBED_LINKS\` Permission For This Channel!`)
-               if(!permission.has("USE_EXTERNAL_EMOJIS")) return message.reply(`❌ **|** I Don't Have \`USE_EXTERNAL_EMOJIS\` Permission For This Channel!`)
-                if(!permission.has("ATTACH_FILES")) return message.reply(`❌ **|** I Don't Have \`ATTACH_FILES\` Permission For This Channel!`);*/
+ 
     if(message.author.bot) return;
     // If it isn't in kahoot and isnt me
     //if(message.guild.id === "82578514917785606" && message.author.id != "587517896133967884") return;
@@ -292,6 +272,7 @@ const perms = channel.permissionsFor(message.client.user)
     if(message.content === ",g")console.log(bot.users.size);
     if(message.channel.type === "dm") return message.author.send("Sorry, I don't respond to DM's. Add me to your server so we can have fun:\nhttps://discord.com/api/oauth2/authorize?client_id=870174977914196058&permissions=137976212560&scope=bot");
     //vote checkr!
+	if(message.channel.type === "dm") return message.author.send("Sorry, I don't respond to DM's. Add me to your server so we can have fun:\nhttps://discord.com/api/oauth2/authorize?client_id=870174977914196058&permissions=137976212560&scope=bot");
     if(message.content === "!ch"){
       DBL.hasVoted(message.author.id).then(c=>{
         if(c){
