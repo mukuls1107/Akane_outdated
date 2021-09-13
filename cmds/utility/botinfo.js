@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
-//const errors = require("../utils/errors.js");
-const moment = require("moment");
-const ms = require("ms");
+
 
 module.exports.run = async (bot, message, args) => {
   message.delete();
@@ -17,12 +15,12 @@ module.exports.run = async (bot, message, args) => {
   .setColor("GREEN")
   .addField(`- Bot creators: \n`, `> DAMOÑ#8497\n> <@587517896133967884>\n\n> @Akshu✨#6552\n> <@585711075413065728>`)
   .addField(`- Bot info: \n`, `> ${bot.user.tag}\n> 870174977914196058`)
-  .addField(`- Created on: `, `> ${bot.user.createdAt} DD-MM-YYYY`)
-  .addField(`- Servers: `, `🛡 ${servsize}`)
-    .addField(`- channels: `, `📁 ${chansize}`)
-    .addField(`- Users: `, `🙆‍♂️ ${usersize}` )
+  .addField(`- Created on: \n`, `> ${bot.user.createdAt} `)
+  .addField(`- Servers: \n`, `🛡 ${servsize}`)
+    .addField(`- channels: \n`, `📁 ${chansize}`)
+    .addField(`- Users: \n`, `🙆‍♂️ ${usersize}` )
   
-  message.channel.send(botembed).then(m => m.delete(5000));
+  message.channel.send(botembed).then(m => m.delete(300000));
 }
 
 module.exports.config = {
