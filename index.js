@@ -136,7 +136,7 @@ app.listen(3000)
         .addField("Voting rewards:", field)
     message.channel.send(embed);
 */
-
+/*
 //webhoo;
 const dbl = new DBL(settings.topgg_token, { webhookPort: 8000, webhookAuth: settings.pass });
 
@@ -144,7 +144,7 @@ const dbl = new DBL(settings.topgg_token, { webhookPort: 8000, webhookAuth: sett
 dbl.webhook.on('ready', hook => {
    console.log(`Webhook up and running at http://${hook.hostname}:${hook.port}${hook.path}`);
 });
-
+*/
 
 
 
