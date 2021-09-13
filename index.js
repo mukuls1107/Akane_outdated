@@ -6,7 +6,7 @@ const DBL = require("dblapi.js");
 const express = require("express");
 const CronJob = require('cron').CronJob;
 //const disbotlist = require("disbotlist");
-const keepAlive = require('./server.js')
+//const keepAlive = require('./server.js')
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
@@ -354,7 +354,7 @@ const perms = channel.permissionsFor(message.client.user)
 bot.on('error', console.error);
 
 ///////////////////////////   TAKE THE TOKEN        /////////////////////////////////////
-keepAlive();
+//keepAlive();
 bot.login(settings.token);
 
 
