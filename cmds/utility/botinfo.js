@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Bot Info")
   .setThumbnail(`${bicon}`)
   .setDescription(`This bot was created for the DevHub Server of Discord to have fun.`)
-  .setFooter(`(Thanks for using our bot.\n\nYou can invite it from here!)[https://top.gg/bot/870174977914196058]`)
+  .setFooter(`[Thanks for using our bot.\n\nYou can invite it from here!](https://top.gg/bot/870174977914196058)`)
   .setURL('https://top.gg/bot/870174977914196058')
   .setColor("GREEN")
   .addField(`- Bot creators: \n`, `> DAMOÑ#8497\n> <@587517896133967884>\n\n> @Akshu✨#6552\n> <@585711075413065728>`)
