@@ -216,7 +216,7 @@ bot.on ("guildCreate", async guild => {
     guild.channels.get(guildChannel).send("Thanks for inviting me into this server! If i dont respond to any of your typed command, that is probably because of **MISSING_PERMISSIONS**. Allow me the permissions of MANAGE MESSAGES, SEND MESSAGES, ATTACH files")
     
     // Send alert to Kahoot that a new server invited the bot
-    bot.guilds.get("825785149177856060").channels.get("879719329829117992").send(`***A guild invited me: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!***`);
+    bot.guilds.get("825785149177856060").channels.get("879719329829117992").send(`***A guild invited me: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!. Owner is ${guild.owner} and it was created at ${guild.createdAt}!***`);
 });
 
 bot.on("guildDelete", async guild => {
