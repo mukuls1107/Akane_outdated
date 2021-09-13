@@ -22,7 +22,7 @@ bot.levelCurve = require("./assets/levelCurve.json");
 
 // Mongoose connection to DB
 const mongoose = require("mongoose");
-const mongoSRV = process.env.mongo ;
+const mongoSRV = "mongodb+srv://damon00-dev:xbox3078@cluster0.aziyz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" ;
 mongoose.connect(mongoSRV, {
     useNewUrlParser: true
 }, function (err){
