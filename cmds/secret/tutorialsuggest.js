@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 ////////\n///////////////////////////////////////////////////////////////////////////////////////////////////
     let embed = new Discord.RichEmbed()
     .setColor(bot.colors.Green)
-    .setTitle("Waifun Help - Suggest a character")
+    .setTitle("Akane Help - Suggest a character")
     //.addField("[want to add characters by your own?](https://discord.gg/7zu3aTj9h5)")
     .setDescription(`To suggest characters, you need to head to the 'manual-suggest' channel and suggest characters as shown below (Description is optional)\n[want to add characters by your own?](https://discord.gg/7zu3aTj9h5)`)
     .addField("Example: One Character",
