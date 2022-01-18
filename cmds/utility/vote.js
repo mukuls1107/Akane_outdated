@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
             });
             await newUser.save();
             user = await bot.userinventories.findOne({ userID: message.author.id });
-            message.reply(`Welcome to Waifun! You got a free extra **Sleeve**, use Sleeves to catch characters you want, you get Sleeves by either using 'claim' every 3 hours or grabbing them when they randomly drop. You can now start using 'claim' to get your Sleeves and 'spawn' to spawn a random character, object or event. Good Luck!`)
+            message.reply(`Welcome to Akane! You got a free extra **Sleeve**, use Sleeves to catch characters you want, you get Sleeves by either using 'claim' every 3 hours or grabbing them when they randomly drop. You can now start using 'claim' to get your Sleeves and 'spawn' to spawn a random character, object or event. Good Luck!`)
         }
 
         // Check if 12 hours passed
