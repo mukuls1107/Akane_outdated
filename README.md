@@ -18,7 +18,8 @@ Create a settings.json file like the following:
 	"token":"Add Your Discord Bot Token here",
 	"prefix":"Add your bot's prefix here",
     "topgg_token":"Enter your topgg Token here.(Only Necessary if you enable the vote command)",
-    "pass":"Enter your TopGG Webhook's Password here(Only Necessary if you enable the vote command)"
+    "pass":"Enter your TopGG Webhook's Password here(Only Necessary if you enable the vote command)",
+    "MONGO_URI":"Enter Your MongoURI here."
 }
 ```
 
@@ -30,4 +31,5 @@ npm install
 node .
 ```
 [Dont have Node? Click me!](https://nodejs.org/en/)
-
+[Generate Bot Token from here!](https://discord.com/developers/applications)
+[Generate MongoURI from here!](https://mongodb.com)
