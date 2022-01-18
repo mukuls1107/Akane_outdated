@@ -15,14 +15,10 @@ Create a settings.json file like the following:
 
 ```
 {
-    "token": "DISCORD_BOT_TOKEN"
-    "defaultPrefix": "b!", 
-    "DB_USER": "Put your MySQL Database Username Here",
-    "DB_PASS": "Put your MySQL Database Password Here",
-    "DB_NAME": "Put your MySQL Database Name Here"
-    "INVITE_LINK": "Place your bots invite link here!"
-    "PATRON_TOKEN": "If you plan on using the patreon api then define your token here, if not you can ignore this.",
-    "SHARD_COUNT": "Amount of shards you'd like the client to have"
+	"token":"Add Your Discord Bot Token here",
+	"prefix":"Add your bot's prefix here",
+    "topgg_token":"Enter your topgg Token here.(Only Necessary if you enable the vote command)",
+    "pass":"Enter your TopGG Webhook's Password here(Only Necessary if you enable the vote command)"
 }
 ```
 
