@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if(!reline[0] || reline[0] == "help") {
         return message.reply (`Usage: ${bot.prefix}add name;sex;franchise;image1,image2;category;description\nRead the how-to-add-characters channel for more detailed info.`);
     }
-    // WAIFUN QUEST
+    // Akane QUEST
     
     if(message.channel.id !==  "884417265632694292") 
    
