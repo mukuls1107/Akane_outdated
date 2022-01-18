@@ -24,12 +24,7 @@ module.exports.run = async (bot, message, args) => {
         "        ```CSS\n>> avatar\n>> image\n>> gif\n>> meme\n>> lizard```" , )
         .addField("Description",
         "        ```Shows a user's avatar.\nSearch google images.\nSearch gifs on giphy.\nGet a meme from reddit.\nRandom lizard pic.```", )
-       /* .addField("🖼 Image-Manipulation",
-        "        ```CSS\nimpact\ninvert\ngray\ndf\nmagik\nyoutube\nblur\ncycle\npaint\nswirl\ncrop```", true)
-        .addField("---------------------Description---------------------",
-        "        ```Impact meme generator\nInvert last picture\nBlack'n'White last picture\nDeep Fry last picture\nDeform a picture\nTransform picture to yt video\nBlur last picture\nCycle pixels last picture\nPaint effect last picture\nSwirl last picture\nCrop picture for **Akane** use```", true)
-        .addField("---------------------Description---------------------",
-        "        ```Look for hentai on a random site\nLook for a hentai pic on danbooru\nLook for a hentai pic on gelbooru\nLook for a hentai pic on rule34\nLook for a hentai pic on konachan\nLook for a hentai pic on yandere\nLook for a hentai pic on xbooru\nLook for hentai'nt on safebooru\nLook for a hentai pic on tbib```", true)*/
+      
         .addField("🛠 Utility",
         "        ```CSS\n>> help\n>> invite\n>> vote\n>> userinfo\n>> ping\n>> pong\n>> calc\n>> translate```" )
         .addField("Description",
