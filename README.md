@@ -11,7 +11,7 @@ If you'd like to reach me personally you can join my Discord Server: https://dis
 #### How to get started:
 
 Create a settings.json file like the following:
-##### DefaultPrefix isnt a value which is used at the moment but will be in the future...
+##### DefaultPrefix isnt a value which is used at the moment ...
 
 ```
 {
