@@ -8,6 +8,8 @@ if you have any issues with it feel free to open an issue in the repository!
 
 If you'd like to reach me personally you can join my Discord Server: https://discord.gg/tUCCsRSHxQ
 
+If you want to deploy your bot on Heroku, then do not change or delete the **Procfile**
+
 #### How to get started:
 
 Create a settings.json file like the following:
