@@ -22,7 +22,7 @@ bot.levelCurve = require("./assets/levelCurve.json");
 
 // Mongoose connection to DB
 const mongoose = require("mongoose");
-const mongoSRV = "mongodb+srv://damon00-dev:xbox3078@cluster0.aziyz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" ;
+const mongoSRV = settings.MONGO_URI ;
 mongoose.connect(mongoSRV, {
     useNewUrlParser: true
 }, function (err){
@@ -31,21 +31,7 @@ mongoose.connect(mongoSRV, {
 });
 mongoose.set('useCreateIndex', true);
 
-// Mongoose connection to DB
-// const mongoose = require("mongoose");
-// let options = {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     autoReconnect: true,
-//     reconnectTries: Number.MAX_VALUE, 
-//     reconnectInterval: 500
-//    };
-   
-// let cluster = "mongodb+srv://Torqus:Priscipiero1!@waifun-lyiug.mongodb.net/Waifun";
-// mongoose.connect(cluster, options, function (err){
-//     if(err) console.log(err);
-//     else console.log("<<< Successfully connected to MongoDB >>>");
-// });
+
 
 // Mongoose collection model definitions
 bot.characters = require("./models/characters.js");
@@ -94,62 +80,7 @@ async function load(dir){
 
 // Load commands in sub folders
 ["actions","collections","fun","image","secret","settings","utility"].forEach(ld => load(ld));
-// Events
 
- /* const eventFiles = fs
-	.readdirSync('./events')
-	.filter(file => file.endsWith('.js'));
-for (const file of eventFiles) {
-	const event = require(`./events/${file}`);
-	if (event.once) {
-		bot.once(event.name, (...args) => event.execute(...args, bot));
-	} else {
-		bot.on(event.name, (...args) => event.execute(...args, bot));
-	}
-} */
-//TopGG Server Counter
-
-
-/*
-const Topgg = require("@top-gg/sdk")
-const express = require("express")
-
-const app = express()
-
-const webhook = new Topgg.Webhook("damon00-dev")
-
-app.post("/dblwebhook", webhook.listener(vote => {
-  // vote will be your vote object, e.g
-  console.log(vote.user) // 395526710101278721 < user who voted\
-
-  // You can also throw an error to the listener callback in order to resend the webhook after a few seconds
-}))
-
-app.listen(3000)
-*/
-
- // Your discord.js or eris client (or djs ShardingManager)
- /*  let embed = await new Discord.RichEmbed()
-        .setColor(bot.colors.Green)
-        .setTitle("Akane Links")
-        .setDescription(`Vote for Akane [here](https://top.gg/bot/870174977914196058)\nJoin our discord server [here](https://discord.gg/sqTRV843GH)\nInvite the bot to your server [here](${link})`)
-        .addField("Voting rewards:", field)
-    message.channel.send(embed);
-*/
-/*
-//webhoo;
-const dbl = new DBL(settings.topgg_token, { webhookPort: 8000, webhookAuth: settings.pass });
-
-// When the webhook is ready log it to the console, this will log `Webhook up and running at http://0.0.0.0:8000/dblwebhook`
-dbl.webhook.on('ready', hook => {
-   console.log(`Webhook up and running at http://${hook.hostname}:${hook.port}${hook.path}`);
-});
-*/
-
-
-
-
-//https://discord.com/api/webhooks/886498237261959239/nFnUXguVZbfFLwvoSL1ukfV5BeV2h-V5PrQn6NEB-5mO1qQ3m1LLseSw4fAiAfBl1Qy-
 
 ///////////////////////////     On start
 bot.on ("ready", async ()=> {
@@ -215,7 +146,7 @@ bot.on ("guildCreate", async guild => {
     guild.channels.get(guildChannel).send("Bot ready for duty!")
     guild.channels.get(guildChannel).send("Thanks for inviting me into this server! If i dont respond to any of your typed command, that is probably because of **MISSING_PERMISSIONS**. Allow me the permissions of MANAGE MESSAGES, SEND MESSAGES, ATTACH files")
     
-    // Send alert to Kahoot that a new server invited the bot
+    // Send alert to Akane Hub that a new server invited the bot
     bot.guilds.get("825785149177856060").channels.get("879719329829117992").send(`***A guild invited me: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!. Owner is ${guild.owner} and it was created at ${guild.createdAt}!***`);
 });
 
@@ -223,7 +154,7 @@ bot.on("guildDelete", async guild => {
     // Delete guild config from guildsettings
     await bot.guildsettings.findOneAndDelete({ guildID: guild.id });
 
-    // Send alert to Kahoot that a server kicked the bot
+    // Send alert to Akane HUb that a server kicked the bot
     bot.guilds.get("825785149177856060").channels.get("879719329829117992").send(`***I have been removed from: ${guild.name} (id: ${guild.id}). This guild had ${guild.memberCount} members :c***`);
   });
 
@@ -238,23 +169,6 @@ const ap = AutoPoster(settings.topgg_token, bot)
 ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
 })
-/*
-const { AutoPoster } = require('topgg-autoposter')
-
-const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3MDE3NDk3NzkxNDE5NjA1OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMxMjczMTcxfQ.cgiClzfpQDJSFm1ywboqjlmlARSe1mD6RK1aIPHpEEU', bot) // your discord.js or eris client
-
-// optional
-poster.on('posted', (stats) => { // ran when succesfully posted
-  bot.guilds.get("825785149177856060").channels.get("886203714703073280").send(`Posted stats to Top.gg | ${stats.serverCount} servers`)
-});
-
-poster.on('error',(err)=>{
-  bot.guilds.get("825785149177856060").channels.get("886203714703073280").send(err)
-});
-
-
-*/
-//TopGG Vote counter
 
 
 
@@ -266,7 +180,7 @@ bot.on("message", async message =>{
   
  
     if(message.author.bot) return;
-    // If it isn't in kahoot and isnt me
+    // If it isn't in AkaneHub and isnt me
     //if(message.guild.id === "82578514917785606" && message.author.id != "587517896133967884") return;
     // Send message on DM
     if(message.content === ",g")console.log(bot.users.size);
@@ -335,7 +249,7 @@ bot.on("message", async message =>{
 bot.on('error', console.error);
 
 ///////////////////////////   TAKE THE TOKEN        /////////////////////////////////////
-//keepAlive();
+
 bot.login(settings.token);
 
 
@@ -343,7 +257,7 @@ bot.login(settings.token);
 process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
-// Talk to channels directly through console like a champ
+// Talk to channels directly through console like a champ 😎😎😎
 process.stdin.on("data", function(data) {
     console.log("recieved " + data)
     stringData = data.toString();
@@ -352,4 +266,3 @@ process.stdin.on("data", function(data) {
     else bot.guilds.get("825785149177856060").channels.get("882876101309898763").send(lines[0]);
 });
 
-// TOP>GG
