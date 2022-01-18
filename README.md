@@ -30,6 +30,6 @@ npm install
 
 node .
 ```
-[Dont have Node? Click me!](https://nodejs.org/en/)
-[Generate Bot Token from here!](https://discord.com/developers/applications)
+[Dont have Node? Click me!](https://nodejs.org/en/)<br>
+[Generate Bot Token from here!](https://discord.com/developers/applications)<br>
 [Generate MongoURI from here!](https://mongodb.com)
