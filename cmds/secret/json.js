@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const fs = require('fs');
+const spTime = Discord.Collection("cmd": cmd.split(1:6))
 
 async function addCharacterToDatabase(bot, char){
     let characters = new bot.characters({
@@ -12,7 +13,7 @@ async function addCharacterToDatabase(bot, char){
         category: char.category,
         description: char.description,
         popularity: 0,
-        createdBy: char.createdBy
+        createdBy: char.createdBy({Date.now() - spTime})
     });
     // Save character to characters
     await characters.save();
