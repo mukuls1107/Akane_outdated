@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const fs = require('fs');
-const spTime = Discord.Collection("cmd": cmd.split(1:6))
+//const spTime = Discord.Collection("cmd": cmd.split(1:6))
 
 async function addCharacterToDatabase(bot, char){
     let characters = new bot.characters({
